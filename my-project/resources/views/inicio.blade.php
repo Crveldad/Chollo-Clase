@@ -8,11 +8,22 @@
 </head>
 <body>
     <nav>
-        <a href="http://">Inicio</a>
-        <a href="http://">Crear chollos</a>
-        <a href="http://">Editar chollos</a>
+        <a href="{{ route('inicio') }}">Inicio</a>
+        <a href="{{ route('formulario') }}">Crear chollos</a>
+       <!-- <a href="{ route('chollos.editar', $chollo) }}">Editar chollos</a> -->
     </nav>
     <h1>Esto es el índice</h1>
+
+    <div>   
+        @yield('formulario')
+        @if (session('mensaje'))
+            <h3>{{ session('mensaje')}}</h3>
+        @endif
+    </div>
+
+    <div>
+        @yield('listado')
+    </div>
 
 </body>
 </html>
