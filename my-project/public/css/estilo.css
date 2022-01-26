@@ -6,6 +6,36 @@
             src: local('Old London'), url(../fonts/OldLondon.ttf) format('truetype'), url(../fonts/Olondon_.otf) format('opentype');
         }
         
+        @font-face {
+            font-family: 'Angel Wish';
+            src: url(../fonts/Angel\ wish.ttf) format('truetype'), url(../fonts/Angel\ wish.otf) format('opentype');
+        }
+        
+        @font-face {
+            font-family: 'Blach';
+            src: url(../fonts/BLACH___.TTF) format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Black Knight';
+            src: url(../fonts/BlackKnightFLF.ttf) format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Canterbriggia';
+            src: url(../fonts/cantebriggia.ttf) format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Des Malers';
+            src: url(../fonts/Des\ Malers\ Fraktur.ttf) format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Inked Bones';
+            src: url(../fonts/InkedBones_PERSONAL_USE_ONLY.ttf) format('truetype');
+        }
+        
         @counter-style pent {
             system: cyclic;
             symbols: \26E7;
@@ -14,13 +44,15 @@
         }
         
          :root {
-            --blanco: #faf5de;
+            --blanco: #fff;
             --negro: #000000;
-            --azul: #464c7a;
+            --azul: #6a70a0;
             --dorado: #efb810;
             --marron: #a77d36;
             --azulpatron: #3d444c;
             --florpatron: #ddc36e;
+            --gris: #363636;
+            --rojo: #D11600;
         }
         /***************************** ETIQUETAS *****************************/
         
@@ -34,18 +66,18 @@
         }
         
         body {
-            background-color: var(--blanco);
-            font-family: 'IM Fell DW Pica';
+            background-color: var(--negro);
+            font-family: 'Angel Wish';
             background-image: url("../images/patronflor.jpg");
             background-repeat: repeat;
         }
         
         a {
-            color: var(--azul);
+            color: var(--blanco);
         }
         
         a:visited {
-            color: var(--marron);
+            color: var(--rojo);
         }
         
         h1 {
@@ -197,7 +229,6 @@
         nav ul {
             padding: 0;
             margin: 0 auto;
-            width: 600px;
             height: 40px;
         }
         
@@ -209,7 +240,6 @@
         nav a {
             color: var(--blanco);
             display: inline-block;
-            width: 100px;
             text-align: center;
             text-decoration: none;
             line-height: 40px;
@@ -219,10 +249,6 @@
         
         nav li a:visited {
             color: var(--blanco);
-        }
-        
-        .activo {
-            color: var(--marron) !important;
         }
         
         nav li a {
@@ -429,19 +455,6 @@
             width: 70%;
         }
         
-        .contenedor img {
-            display: block;
-            margin: auto;
-        }
-        
-        .contenedor form {
-            background-color: var(--blanco);
-            padding-top: 50px;
-            padding-bottom: 100px;
-            display: flex;
-            justify-content: center;
-        }
-        
         .contenedor table {
             font-size: 1.7em;
             text-align: center;
@@ -508,14 +521,15 @@
             background-color: var(--negro);
             width: 100%;
             display: flex;
+            justify-content: center;
         }
         
-        .logo img {
+        .cs {
             -webkit-transition: 1s linear;
             transition: 0.5s ease;
         }
         
-        .logo img:hover {
+        .cs:hover {
             -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
         }
@@ -536,6 +550,50 @@
         .pergamino img {
             padding: 15px;
             float: left;
+        }
+        
+        .chollo {
+            height: 300px;
+            width: 800px;
+            background-color: var(--gris);
+            color: var(--blanco);
+            -webkit-transition: 1s linear;
+            transition: 1s linear;
+            margin: 50px;
+        }
+        
+        .chollo img {
+            float: left;
+            margin: 20px;
+        }
+        
+        .chollo form {
+            float: left;
+            margin: 5px;
+        }
+        
+        .chollo:hover {
+            -webkit-box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.47);
+            box-shadow: 10px 10px 14px 2px rgba(0, 0, 0, 0.47);
+        }
+        
+        .formulario {
+            background-color: var(--blanco);
+            padding-top: 50px;
+            padding-bottom: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .error {
+            background-color: var(--negro);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+        
+        .error h1 {
+            color: var(--rojo);
         }
         
         .berserk {

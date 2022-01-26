@@ -25,3 +25,6 @@ Route::get('editar/{id}', [ PagesController::class, 'editar' ]) -> name('chollos
 Route::put('editar/{id}', [ PagesController::class, 'actualizar' ]) -> name('chollos.actualizar');
 
 Route::delete('eliminar/{id}', [ PagesController::class, 'eliminar' ]) -> name('chollos.eliminar');
+
+Route::get('nuevos', [ PagesController::class, 'nuevos']) -> name('nuevos');
+Route::get('destacados', [ PagesController::class, 'destacados']) -> name('destacados');

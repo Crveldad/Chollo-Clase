@@ -86,4 +86,16 @@ class PagesController extends Controller
       
         return back() -> with('mensaje', 'Chollo deleted, suerte');
       }
+
+    public function nuevos(){
+        $chollos = Chollo::orderBy('id', 'desc') ->get();
+
+        return view('listado', @compact('chollos'));
+    }
+
+    public function destacados(){
+        $chollos = Chollo::orderBy('puntuacion', 'desc') ->get();
+
+        return view('listado', @compact('chollos'));
+    }
 }

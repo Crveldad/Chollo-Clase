@@ -1,10 +1,10 @@
 @extends('inicio')
 
 @section('formulario')
-
-<form action="{{ route('chollos.crear') }}" method="POST">
+<form action="{{ route('chollos.crear') }}" method="POST" class="formulario">
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
-
+    <fieldset>
+      <legend>Dramatis Personae:</legend>
     <label for="titulo">Título:</label>
     <input type="text" name="titulo" class="form-control mb-2" autofocus><br>
       @error('titulo')
@@ -63,5 +63,7 @@
     <button class="btn btn-primary btn-block" type="submit">
       Crear nuevo chollo
     </button>
+  </fieldset>
 </form>
+
 @endsection

@@ -5,6 +5,8 @@
 
     @foreach ($chollos as $chollo)
         <div class="chollo">
+            <img src="{{ asset("img/5-chollo-severo.jpg") }}" alt="Chollo">
+            <!--<img src="{ asset("img/".$chollo->id."-chollo-severo.jpg") }}" alt="Chollo">-->
             <ul>
                 <li>ID: {{ $chollo -> id }}</li>
                 <li>Título: {{ $chollo -> titulo }}</li>
@@ -14,16 +16,16 @@
                 <li>Puntuación: {{ $chollo -> puntuacion }}</li>
                 <li>Precio: {{ $chollo -> precio }}</li>
                 <li>Precio de descuento: {{ $chollo -> descuento }}</li>
-                <li>Disponible: {{ $chollo -> disponible }}</li>
             </ul>
-            <div>
-                <button><a href="{{ route('chollos.editar', $chollo) }}" class="btn btn-warning btn-sm">Editar</a></button>
+
+                <form action="{{ route('chollos.editar', $chollo) }}" method="GET" class="d-inline">
+                    <button type="submit">Editar</button>
+                </form>
                 <form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" class="d-inline">
                     @method('DELETE')
                     @csrf
                     <button type="submit">Eliminar</button>
                   </form>
-            </div>
         </div>
     @endforeach
 
