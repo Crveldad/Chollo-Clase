@@ -1,14 +1,12 @@
 @extends('inicio')
 
-
 @section('formulario')
-
 
 <form action="{{ route('chollos.crear') }}" method="POST">
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}
 
     <label for="titulo">Título:</label>
-    <input type="text" name="titulo" class="form-control mb-2" autofocus ><br>
+    <input type="text" name="titulo" class="form-control mb-2" autofocus><br>
       @error('titulo')
           <div class="alert alert-danger">
             No olvides rellenar el título
@@ -32,7 +30,13 @@
       @enderror
 
     <label for="categoria">Categoría:</label>
-    <input type="text" name="categoria" class="form-control mb-2"><br>
+    <select name="categoria" id="categoria">
+      <option value="lorem">Lorem</option>
+      <option value="ipsum">Ipsum</option>
+      <option value="dolor">Dolor</option>
+      <option value="sit">Sit</option>
+      <option value="amet">Amet</option>
+    </select><br>
     @error('categoria')
           <div class="alert alert-danger">
             No olvides rellenar la categoría

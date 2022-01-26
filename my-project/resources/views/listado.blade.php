@@ -16,6 +16,14 @@
                 <li>Precio de descuento: {{ $chollo -> descuento }}</li>
                 <li>Disponible: {{ $chollo -> disponible }}</li>
             </ul>
+            <div>
+                <button><a href="{{ route('chollos.editar', $chollo) }}" class="btn btn-warning btn-sm">Editar</a></button>
+                <form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" class="d-inline">
+                    @method('DELETE')
+                    @csrf
+                    <button type="submit">Eliminar</button>
+                  </form>
+            </div>
         </div>
     @endforeach
 

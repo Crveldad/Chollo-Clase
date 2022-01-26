@@ -16,15 +16,12 @@ use App\Http\Controllers\PagesController;
 
 Route::get('/', [PagesController::class, 'listado']) -> name('inicio') ; 
 
-//esta sería estática, pero no se borra o da error
 Route::get('listado', [PagesController::class, 'listado']) ;
-
-//esta, dinámica
-//Route::get('chollos/{id?}', [ PagesController::class, 'detalle' ]) -> name('chollos.detalle');
 
 Route::get('formulario', [ PagesController::class, 'formulario']) -> name('formulario');
 Route::post('chollos', [ PagesController::class, 'crear' ]) -> name('chollos.crear');
 
-
 Route::get('editar/{id}', [ PagesController::class, 'editar' ]) -> name('chollos.editar');
 Route::put('editar/{id}', [ PagesController::class, 'actualizar' ]) -> name('chollos.actualizar');
+
+Route::delete('eliminar/{id}', [ PagesController::class, 'eliminar' ]) -> name('chollos.eliminar');

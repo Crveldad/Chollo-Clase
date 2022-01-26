@@ -1,0 +1,661 @@
+        /***************************** FUENTES *****************************/
+        
+        @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+        @font-face {
+            font-family: 'Old London';
+            src: local('Old London'), url(../fonts/OldLondon.ttf) format('truetype'), url(../fonts/Olondon_.otf) format('opentype');
+        }
+        
+        @counter-style pent {
+            system: cyclic;
+            symbols: \26E7;
+            /*utf8 code for "pentagram" "⛧" */
+            suffix: " ";
+        }
+        
+         :root {
+            --blanco: #faf5de;
+            --negro: #000000;
+            --azul: #464c7a;
+            --dorado: #efb810;
+            --marron: #a77d36;
+            --azulpatron: #3d444c;
+            --florpatron: #ddc36e;
+        }
+        /***************************** ETIQUETAS *****************************/
+        
+        * {
+            box-sizing: border-box;
+            color: var(--negro);
+            margin: 0px;
+            /* externo */
+            padding: 0px;
+            /* interno */
+        }
+        
+        body {
+            background-color: var(--blanco);
+            font-family: 'IM Fell DW Pica';
+            background-image: url("../images/patronflor.jpg");
+            background-repeat: repeat;
+        }
+        
+        a {
+            color: var(--azul);
+        }
+        
+        a:visited {
+            color: var(--marron);
+        }
+        
+        h1 {
+            font-size: 2em;
+            font-family: 'Old London';
+        }
+        
+        h2 {
+            font-size: 1.5em;
+        }
+        
+        p {
+            font-style: italic;
+            font-size: 1.2em;
+            text-align: justify;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-bottom: 15px;
+        }
+        
+        ol {
+            padding-left: 50px;
+            list-style-type: upper-roman;
+        }
+        
+        section img {
+            width: 100%;
+        }
+        
+        aside {
+            float: left;
+            font-weight: bold;
+            width: 30%;
+            margin-top: 30px;
+        }
+        
+        aside a {
+            margin-left: 30px;
+            text-decoration: none;
+            font-size: 1.5em;
+            line-height: 30px;
+        }
+        
+        legend {
+            margin-bottom: 0px;
+            margin-left: 16px;
+        }
+        
+        fieldset {
+            background-image: -moz-element();
+            max-width: 500px;
+            padding: 16px;
+            border: 3px solid var(--azulpatron);
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            font-family: 'Old London';
+            font-size: 1.4em;
+            text-align: right;
+            background-color: var(--blanco);
+        }
+        
+        input::placeholder {
+            font-family: 'IM Fell DW Pica';
+            font-size: 1.2em;
+        }
+        
+        textarea {
+            margin-bottom: 5px;
+        }
+        
+        textarea::placeholder {
+            font-family: 'IM Fell DW Pica';
+            font-size: 1.1em;
+        }
+        
+        img:not([alt]) {
+            border: 3px solid rgb(133, 2, 2);
+        }
+        
+        table {
+            table-layout: auto;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            border: 0px;
+        }
+        
+        table caption {
+            background-color: var(--marron);
+            caption-side: bottom;
+        }
+        
+        table ::first-letter {
+            font-family: 'Old London';
+            font-size: 2em;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: var(--florpatron);
+        }
+        
+        table td:nth-child(odd) {
+            background-color: var(--azulpatron);
+            color: var(--blanco);
+        }
+        
+        article {
+            padding-bottom: 10px;
+        }
+        
+        article h2 {
+            padding-top: 20px;
+        }
+        
+        article p {
+            margin-top: 10px;
+            text-indent: 30px;
+        }
+        
+        article p::first-letter {
+            font-family: 'Old London';
+            font-size: 2em;
+        }
+        
+        hr {
+            border: 1px solid var(--azulpatron);
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+        
+        iframe {
+            display: block;
+            margin: auto;
+        }
+        /***************************** NAVEGADOR *****************************/
+        
+        nav {
+            height: 40px;
+            width: 100%;
+            background: var(--negro);
+            font-size: 1.5em;
+            font-family: 'Old London';
+            font-weight: bold;
+            position: relative;
+            box-shadow: 10px 10px 15px 2px rgba(0, 0, 0, 0.47);
+        }
+        
+        nav ul {
+            padding: 0;
+            margin: 0 auto;
+            width: 600px;
+            height: 40px;
+        }
+        
+        nav li {
+            display: inline;
+            float: left;
+        }
+        
+        nav a {
+            color: var(--blanco);
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 40px;
+            text-shadow: 1px 1px 0px var(--negro);
+            transition: background-color 0.5s linear;
+        }
+        
+        nav li a:visited {
+            color: var(--blanco);
+        }
+        
+        .activo {
+            color: var(--marron) !important;
+        }
+        
+        nav li a {
+            border-right: 1px solid var(--negro);
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        
+        nav li:last-child a {
+            border-right: 0;
+        }
+        
+        nav a:hover {
+            background-color: var(--blanco);
+        }
+        
+        nav a#pull {
+            display: none;
+        }
+        /***************************** CLASES VARIAS *****************************/
+        /***************************** IMAGEN HERO *****************************/
+        
+        .hero {
+            background-image: url("../images/hero.jpg");
+            height: 600px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero img {
+            max-width: 350px;
+            -webkit-transition: 1s linear;
+            transition: 1s linear;
+            opacity: 1;
+            animation-duration: 5s;
+            animation-name: hero;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes hero {
+            from {
+                -webkit-transform: rotate(0deg);
+                transform: rotateY(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+                transform: rotateY(180deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+                transform: rotateY(360deg);
+            }
+        }
+        /***************************** FOOTER *****************************/
+        
+        .foot {
+            background-color: var(--blanco);
+            padding-left: 50px;
+            padding-top: 40px;
+            width: 100%;
+            text-align: left;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .foot p {
+            margin-top: 10px;
+            margin-left: 5px;
+            max-width: 300px;
+        }
+        
+        .foot h2 {
+            font-family: 'Old London';
+        }
+        
+        footer>div>div>p {
+            font-style: normal;
+        }
+        
+        .er {
+            background-color: var(--negro);
+            overflow: hidden;
+            opacity: 80%;
+        }
+        
+        .er p {
+            font-family: 'Old London';
+            font-style: normal;
+            color: var(--blanco);
+            text-align: right;
+            margin-right: 200px;
+        }
+        
+        .info {
+            margin: 10px;
+            width: 200px;
+            height: 170px;
+        }
+        
+        .info h2,
+        .contacto h2 {
+            margin-left: 10px;
+        }
+        
+        .info p,
+        .contacto p {
+            margin-left: 10px;
+            text-align: left;
+        }
+        
+        .contacto {
+            margin: 10px;
+            width: 300px;
+            height: 170px;
+            overflow: hidden;
+        }
+        
+        .redes {
+            margin: 10px;
+            width: 300px;
+            height: 100px;
+        }
+        
+        .redes h2 {
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .redes li {
+            margin-right: 5px;
+            display: inline;
+        }
+        
+        .volver {
+            font-size: 1.5em;
+            text-align: right;
+            margin-right: 20px;
+            float: right;
+        }
+        
+        .whatsapp {
+            /*display: block;*/
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            margin-bottom: 30px;
+            margin-right: 30px;
+        }
+        /***************************** CONTENEDORES *****************************/
+        
+        .caja {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+        
+        .caja img {
+            width: 100%;
+        }
+        
+        .contenedor {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--blanco);
+            overflow: hidden;
+        }
+        
+        .contenedor h1 {
+            margin: 10px;
+        }
+        
+        .contenedor h2 {
+            animation-duration: 4s;
+            animation-name: animTexto;
+        }
+        
+        @keyframes animTexto {
+            from {
+                margin-left: 100%;
+                width: 100%;
+            }
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        
+        .contenedor p {
+            margin-top: 20px;
+            text-indent: 40px;
+        }
+        
+        .contenedor section {
+            float: left;
+            width: 70%;
+        }
+        
+        .contenedor img {
+            display: block;
+            margin: auto;
+        }
+        
+        .contenedor form {
+            background-color: var(--blanco);
+            padding-top: 50px;
+            padding-bottom: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contenedor table {
+            font-size: 1.7em;
+            text-align: center;
+        }
+        
+        .enlace {
+            padding-left: 150px;
+            margin-bottom: 20px;
+            list-style-type: upper-roman;
+        }
+        
+        .enlace ol {
+            list-style: pent;
+        }
+        
+        .enlace a {
+            font-family: 'Old London';
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        
+        .enlace p {
+            margin-top: 10px;
+            text-indent: 30px;
+        }
+        
+        .enlace b {
+            font-family: 'Old London';
+            font-size: 1.2em;
+        }
+        
+        .cofradia li {
+            list-style-type: upper-roman !important;
+            margin-top: 20px;
+        }
+        
+        .cofradia p {
+            margin-top: 20px;
+            text-indent: 40px;
+        }
+        
+        .terra li {
+            list-style-position: inside;
+            margin-left: 40px;
+            margin-right: 20px;
+        }
+        
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        
+        .clearfix:after {
+            clear: both;
+        }
+        
+        .clearfix {
+            *zoom: 1;
+        }
+        
+        .logo {
+            padding-top: 10px;
+            background-color: var(--negro);
+            width: 100%;
+            display: flex;
+        }
+        
+        .logo img {
+            -webkit-transition: 1s linear;
+            transition: 0.5s ease;
+        }
+        
+        .logo img:hover {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        
+        .logo h1 {
+            color: var(--blanco);
+            margin-left: 200px;
+            font-size: 4em;
+            display: flex;
+            align-self: center;
+        }
+        
+        .pergamino {
+            overflow: scroll;
+            height: 561px;
+        }
+        
+        .pergamino img {
+            padding: 15px;
+            float: left;
+        }
+        
+        .berserk {
+            background-color: var(--blanco);
+            box-shadow: none;
+            clear: both;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .berserk input[type="button"] {
+            font-family: 'IM Fell DW Pica';
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            overflow: hidden;
+            position: relative;
+            color: var(--blanco);
+            font-weight: 700;
+            font-size: 15px;
+            background-color: var(--negro);
+            padding: 5px 20px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.47);
+        }
+        
+        .legion button {
+            font-family: 'Old London';
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            overflow: hidden;
+            position: relative;
+            color: var(--blanco);
+            font-weight: 700;
+            font-size: 2em;
+            background-color: var(--negro);
+            padding: 15px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.47);
+            margin-top: 5px;
+        }
+        /***************************** MEDIA QUERIES *****************************/
+        
+        @media screen and (max-width: 1024px) {
+            .contenedor {
+                width: 100%;
+            }
+            .contenedor h2 {
+                margin-left: 10px;
+            }
+            .contenedor img,
+            .contenedor iframe {
+                width: 90%;
+            }
+            table caption {
+                caption-side: top;
+            }
+            table ::first-letter {
+                font-family: 'IM Fell DW Pica';
+                font-size: 1.2em;
+            }
+            table td {
+                background-color: var(--azulpatron);
+                color: var(--blanco);
+            }
+            .contenedor section {
+                display: block;
+                width: 100%;
+            }
+            .contenedor aside {
+                display: block;
+                width: 100%;
+            }
+            nav {
+                position: relative;
+            }
+            .hero {
+                width: 100%;
+            }
+            .enlace {
+                padding-left: 120px;
+            }
+            ol {
+                padding-left: 25px;
+            }
+        }
+        /* nuevo tamaño para que se viera correctamente el navegador*/
+        
+        @media screen and (max-width: 600px) {
+            nav li {
+                clear: both;
+                display: block;
+                float: none;
+                z-index: 10;
+            }
+            nav a {
+                background-color: var(--negro);
+            }
+            .contenedor aside {
+                display: block;
+                width: 90%;
+                text-align: right;
+            }
+            .logo h1 {
+                margin-left: 100px;
+                text-align: center;
+            }
+            fieldset {
+                border: 0px;
+            }
+            .enlace {
+                padding-left: 100px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .logo h1 {
+                margin-left: 50px;
+            }
+            .enlace {
+                padding-left: 50px;
+            }
+        }
