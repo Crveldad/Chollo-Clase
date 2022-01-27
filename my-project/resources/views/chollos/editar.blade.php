@@ -6,7 +6,7 @@
     @method('PUT') {{-- Necesitamos cambiar al método PUT para editar--}}
     @csrf {{-- Cláusula para obtener un token de formulario al enviarlo--}}
     <fieldset>
-      <legend>Dramatis Personae:</legend>
+      <legend>Chollo Editor:</legend>
     <label for="titulo">Título:</label>
     <input type="text" name="titulo" class="form-control mb-2" value="{{ $chollo -> titulo }}" autofocus><br>
       @error('titulo')
@@ -61,7 +61,7 @@
           </div>
       @enderror
 
-    <button class="btn btn-primary btn-block" type="submit">Guardar cambios</button>
+    <button class="bot" type="submit">Guardar cambios</button>
     </fieldset>
     </form>
     

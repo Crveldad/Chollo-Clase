@@ -11,7 +11,7 @@ class PagesController extends Controller
     {
         $chollos = Chollo::all();
 
-        return view('listado', @compact('chollos'));
+        return view('listado', compact('chollos'));
     }
 
     public function formulario()
@@ -43,7 +43,7 @@ class PagesController extends Controller
 
         $cholloNuevo->save();
 
-        return back()->with('mensaje', 'Chollo nuevo creado dpm');
+        return back()->with('mensaje', 'Chollo nuevo creado');
     }
 
     public function editar($id)
@@ -77,25 +77,25 @@ class PagesController extends Controller
 
         $cholloActualizado->save();
 
-        return back()->with('mensaje', 'chollo actualizado, loco');
+        return back()->with('mensaje', 'Chollo actualizado');
     }
 
     public function eliminar($id) {
         $cholloEliminado = Chollo::findOrFail($id);
         $cholloEliminado -> delete();
       
-        return back() -> with('mensaje', 'Chollo deleted, suerte');
+        return back() -> with('mensaje', 'Chollo eliminado');
       }
 
     public function nuevos(){
         $chollos = Chollo::orderBy('id', 'desc') ->get();
 
-        return view('listado', @compact('chollos'));
+        return view('listado', compact('chollos'));
     }
 
     public function destacados(){
         $chollos = Chollo::orderBy('puntuacion', 'desc') ->get();
 
-        return view('listado', @compact('chollos'));
+        return view('listado', compact('chollos'));
     }
 }

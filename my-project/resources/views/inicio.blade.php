@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.png')}}">
     <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <title>ChillaSevero</title>
 </head>
@@ -14,18 +15,15 @@
             <a href="{{ route('inicio') }}"><img src="{{ asset('img/logosev.jpg')}}" height="150"" alt="Logo CS" class="cs"></a>
             <a href="{{ route('inicio') }}"><img src="{{ asset('img/chillasev.jpg')}}" height="150" alt="texto CS"></a>
             <a href="{{ route('inicio') }}"><img src="{{ asset('img/logosev.jpg')}}" height="150"" alt="Logo CS" class="cs"></a>
-
         </div>
     </header>
 
-    <div class="orden">
-        <a href="{{ route('nuevos') }}">Nuevos</a>
-        <a href="{{ route('destacados') }}">Destacados</a>
-    </div>  
-
+    
     <nav>
-        <a href="{{ route('inicio') }}">Inicio</a>
-        <a href="{{ route('formulario') }}">Crear chollos</a>
+        <ul>
+            <li><a href="{{ route('nuevos') }}">Nuevos</a></li>
+            <li><a href="{{ route('destacados') }}">Destacados</a></li>
+        </ul>
     </nav>
 
     <div class="contenedor">
@@ -63,33 +61,33 @@
         </div>
         <div class="contacto">
             <h2>Contacto</h2>
-            <p>Tenebris Saeculorum S.L.<br> C/Doctor Fajarnés 19, Local<br> 03204 Elche / Alicante / España<br>678 11 38 70<br> crveldad@hotmail.com
+            <p>ChillaSevero S.L.<br> C/Doctor Fajarnés 19, Local<br> 03204 Elche / Alicante / España<br>678 11 38 70<br> crveldad@hotmail.com
             </p>
         </div>
         <div class="redes">
             <h2>También en</h2>
             <ul class="socialmedia">
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100069452323289"><img src="assets/images/facebook.png" width="50" height="50" alt="Facebook"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100069452323289"><img src="{{ asset('img/facebook.png') }}" width="50" height="50" alt="Facebook"></a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/evisscerador/"><img src="assets/images/instagram.png" width="50" height="50" alt="Instagram"></a>
+                    <a href="https://www.instagram.com/evisscerador/"><img src="{{ asset('img/instagram.png') }}" width="50" height="50" alt="Instagram"></a>
                 </li>
                 <li>
-                    <a href="https://crueldad.tumblr.com/"><img src="assets/images/tumblr.png" width="50" height="50" alt="Tumblr"></a>
+                    <a href="https://crueldad.tumblr.com/"><img src="{{ asset('img/tumblr.png') }}" width="50" height="50" alt="Tumblr"></a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/channel/UCHwXtygWE7uY4T0W-0hGJSw"><img src="assets/images/youtube.png" width="50" height="50" alt="Youtube"></a>
+                    <a href="https://www.youtube.com/channel/UCHwXtygWE7uY4T0W-0hGJSw"><img src="{{ asset('img/youtube.png') }}" width="50" height="50" alt="Youtube"></a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/?lang=es"><img src="assets/images/gorjeo.png" width="50" height="50" alt="Twitter"></a>
+                    <a href="https://twitter.com/?lang=es"><img src="{{ asset('img/gorjeo.png') }}" width="50" height="50" alt="Twitter"></a>
                 </li>
             </ul>
         </div>
 
     </div>
     <div class="er">
-        <p>Copyright @ {{date('Y')}} ChillaSevero</p>
+        <p><span class="red">Alejandro Andreo Padilla</span> Copyright <span class="red">@</span> {{date('Y')}} <span class="red">ChillaSevero</span></p>
     </div>
 </footer>
 </html>

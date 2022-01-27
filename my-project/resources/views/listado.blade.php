@@ -1,31 +1,31 @@
 @extends('inicio')
 
 @section('listado')
-    <h1>Listado de los chollos</h1>
+
+<div class="orden">
+    <a href="{{ route('formulario') }}">Crear chollos</a>
+</div>  
 
     @foreach ($chollos as $chollo)
         <div class="chollo">
-            <img src="{{ asset("img/5-chollo-severo.jpg") }}" alt="Chollo">
-            <!--<img src="{ asset("img/".$chollo->id."-chollo-severo.jpg") }}" alt="Chollo">-->
-            <ul>
-                <li>ID: {{ $chollo -> id }}</li>
-                <li>Título: {{ $chollo -> titulo }}</li>
-                <li>Descripción: {{ $chollo -> descripcion }}</li>
-                <li>URL: {{ $chollo -> url }}</li>
-                <li>Categoría: {{ $chollo -> categoria }}</li>
-                <li>Puntuación: {{ $chollo -> puntuacion }}</li>
-                <li>Precio: {{ $chollo -> precio }}</li>
-                <li>Precio de descuento: {{ $chollo -> descuento }}</li>
-            </ul>
+            <a href="{{ $chollo -> url }}"><img src="{{ asset("img/".$chollo->id."-chollo-severo.jpg") }}" alt="Chollo"></a>
 
-                <form action="{{ route('chollos.editar', $chollo) }}" method="GET" class="d-inline">
-                    <button type="submit">Editar</button>
+                <h3><a href="{{ $chollo -> url }}">{{ $chollo -> titulo }}</a></h3>
+                <p><span class="precio"> {{ $chollo -> precio }}€ </span>&nbsp; {{ $chollo -> descuento }}€</p>
+                <p>{{ $chollo -> descripcion }}</p>
+                <a href="{{ $chollo -> url }}"></a>
+                <p>Categoría: {{ $chollo -> categoria }}</p>
+                <p>Puntuación: {{ $chollo -> puntuacion }}</p>
+
+                <form action="{{ route('chollos.editar', $chollo) }}" method="GET">
+                    <button type="submit" class="bot">Editar</button>
                 </form>
-                <form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" class="d-inline">
+                <form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" >
                     @method('DELETE')
                     @csrf
-                    <button type="submit">Eliminar</button>
-                  </form>
+                    <button type="submit" class="bot">Eliminar</button>
+                </form>
+
         </div>
     @endforeach
 
