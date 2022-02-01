@@ -27,7 +27,7 @@ class PagesController extends Controller
             'url' => 'required',
             'categoria' => 'required',
             'precio' => 'required',
-            'descuento' => 'required',
+            'descuento' => 'required'
         ]);
 
         $cholloNuevo = new Chollo;
@@ -61,7 +61,7 @@ class PagesController extends Controller
             'url' => 'required',
             'categoria' => 'required',
             'precio' => 'required',
-            'descuento' => 'required',
+            'descuento' => 'required'
         ]);
 
         $cholloActualizado = Chollo::findOrFail($id);

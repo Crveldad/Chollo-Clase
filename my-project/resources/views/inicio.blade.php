@@ -27,28 +27,28 @@
     </nav>
 
     <div class="contenedor">
-    <div>
-        @if (session('mensaje'))
-            <h2>{{ session('mensaje')}}</h2>
-        @endif
-    </div>
+        <div>
+            @if (session('mensaje'))
+                <h2>{{ session('mensaje')}}</h2>
+            @endif
+        </div>
 
-    <div>   
-        @yield('formulario')
-    </div>
+        <div>   
+            @yield('formulario')
+        </div>
 
-    <div>   
-        @yield('editar')
-    </div>
+        <div>   
+            @yield('editar')
+        </div>
 
-    <div>   
-        @yield('eliminar')
-    </div>
+        <div>   
+            @yield('eliminar')
+        </div>
 
-    <div>
-        @yield('listado')
+        <div>
+            @yield('listado')
+        </div>
     </div>
-</div>
 
 
 </body>
