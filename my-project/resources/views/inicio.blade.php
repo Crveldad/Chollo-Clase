@@ -21,8 +21,27 @@
     
     <nav>
         <ul>
-            <li><a href="{{ route('nuevos') }}">Nuevos</a></li>
-            <li><a href="{{ route('destacados') }}">Destacados</a></li>
+        @if (Route::has('login'))
+            <li><a href="{{ route('login') }}">Login</a></li>
+        @endif
+            
+        @if (Route::has('register'))
+            <li><a href="{{ route('register') }}">Register</a></li>
+        @endif
+
+            <li>
+                <div>
+                    <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </li>
         </ul>
     </nav>
 

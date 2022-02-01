@@ -4,7 +4,14 @@
 
 <div class="orden">
     <a href="{{ route('formulario') }}">Crear chollos</a>
-</div>  
+</div> 
+<nav class="cate">
+    <ul>
+    <li><a href="{{ route('nuevos') }}">Nuevos</a></li>
+    <li><a href="{{ route('destacados') }}">Destacados</a></li>
+    </ul>
+</nav>
+
 
     @foreach ($chollos as $chollo)
         <div class="chollo">
@@ -29,4 +36,5 @@
         </div>
     @endforeach
 
+    <div class="pagina">{{ $chollos->links() }}</div> 
 @endsection

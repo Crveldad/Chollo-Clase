@@ -574,6 +574,15 @@
             color: var(--rojo);
         }
         
+        .pagina {
+            text-align: center;
+        }
+        
+        .cate,
+        .cate li {
+            float: right;
+        }
+        
         .legion button {
             font-family: 'Blach';
             text-align: center;
