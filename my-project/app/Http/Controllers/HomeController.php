@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chollo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -50,6 +51,7 @@ class HomeController extends Controller
 
         $cholloNuevo->titulo = $request->titulo;
         $cholloNuevo->descripcion = $request->descripcion;
+        $cholloNuevo->user_id = Auth::user()->id;
         $cholloNuevo->url = $request->url;
         $cholloNuevo->categoria = $request->categoria;
         $cholloNuevo->puntuacion = 0;

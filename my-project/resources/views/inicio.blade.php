@@ -67,6 +67,9 @@
         <div>
             @yield('listado')
         </div>
+        <div>
+            @yield('home')
+        </div>
     </div>
 
 

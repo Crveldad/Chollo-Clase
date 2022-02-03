@@ -583,6 +583,17 @@
             float: right;
         }
         
+        .home {
+            height: 700px;
+            color: var(--negro);
+            text-transform: uppercase;
+            background-image: url("../img/guts.jpg");
+            background-repeat: no-repeat;
+            background-size: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
         .legion button {
             font-family: 'Blach';
             text-align: center;

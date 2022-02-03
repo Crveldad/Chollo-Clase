@@ -10,8 +10,9 @@ class PagesController extends Controller
     
     public function listado()
     {
-        //$chollos = Chollo::all(); Esto es si queremos que liste todas, lo hemos puesto que saque por páginas
-        $chollos = Chollo::paginate(5);
+        $chollos = Chollo::all(); 
+        //Esto es si queremos que liste todas, lo hemos puesto que saque por páginas
+        //$chollos = Chollo::paginate(5);
 
         return view('listado', compact('chollos'));
     }

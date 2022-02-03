@@ -17,6 +17,7 @@ class CreateChollosTable extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->unsignedInteger('user_id');
             $table->string('titulo');
             $table->text('descripcion');
             $table->string('url');

@@ -24,17 +24,22 @@
                 <p>Categoría: {{ $chollo -> categoria }}</p>
                 <p>Puntuación: {{ $chollo -> puntuacion }}</p>
 
-                <form action="{{ route('chollos.editar', $chollo) }}" method="GET">
-                    <button type="submit" class="bot">Editar</button>
-                </form>
-                <form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" >
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="bot">Eliminar</button>
-                </form>
+                @if (Auth::user())
+                    @if (Auth::user()->id == $chollo->user_id)
+                    <form action="{{ route('chollos.editar', $chollo) }}" method="GET">
+                        
+                        <button type="submit" class="bot">Editar</button>
+                    </form>
+                    <form action="{{ route('chollos.eliminar', $chollo) }}" method="POST" >
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="bot">Eliminar</button>
+                    </form>
+                    @endif
+                @endif
 
         </div>
     @endforeach
 
-    <div class="pagina">{{ $chollos->links() }}</div> 
+    <!-- <div class="pagina">{{ $chollos->links() }}</div> 
 @endsection

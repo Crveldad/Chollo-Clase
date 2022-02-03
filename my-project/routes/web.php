@@ -30,5 +30,4 @@ Route::get('nuevos', [ PagesController::class, 'nuevos']) -> name('nuevos');
 Route::get('destacados', [ PagesController::class, 'destacados']) -> name('destacados');
 Auth::routes();
 
-//creado automáticamente
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
