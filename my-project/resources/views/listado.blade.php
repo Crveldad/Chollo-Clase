@@ -42,5 +42,5 @@
         </div>
     @endforeach
 
-    <!-- <div class="pagina">{ $chollos->links() }}</div> 
+    
 @endsection
