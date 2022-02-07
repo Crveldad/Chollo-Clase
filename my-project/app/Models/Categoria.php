@@ -8,7 +8,6 @@ use PhpParser\Node\Expr\FuncCall;
 
 class Categoria extends Model
 {
-    public $timestamps = false;
     use HasFactory;
 
     /*public function chollos(){

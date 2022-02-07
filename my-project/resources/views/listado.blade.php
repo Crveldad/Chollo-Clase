@@ -22,6 +22,7 @@
                 <p>{{ $chollo -> descripcion }}</p>
                 <a href="{{ $chollo -> url }}"></a>
                 <p>Categoría: {{ $chollo -> categoria }}</p>
+                <p>El creador es: {{ $chollo->user->name}}</p>
                 <p>Puntuación: {{ $chollo -> puntuacion }}</p>
 
                 @if (Auth::user())
@@ -41,5 +42,5 @@
         </div>
     @endforeach
 
-    <!-- <div class="pagina">{{ $chollos->links() }}</div> 
+    <!-- <div class="pagina">{ $chollos->links() }}</div> 
 @endsection

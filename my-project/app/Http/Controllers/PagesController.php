@@ -10,7 +10,8 @@ class PagesController extends Controller
     
     public function listado()
     {
-        $chollos = Chollo::all(); 
+        $chollos = Chollo::with('user')->get(); 
+        //$chollos = Chollo::all();
         //Esto es si queremos que liste todas, lo hemos puesto que saque por páginas
         //$chollos = Chollo::paginate(5);
 

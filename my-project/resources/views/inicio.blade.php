@@ -73,7 +73,7 @@
     </div>
 
 
-</body>
+
 
 <footer>
     <div class="foot">
@@ -112,4 +112,5 @@
         <p><span class="red">Alejandro Andreo Padilla</span> Copyright <span class="red">@</span> {{date('Y')}} <span class="red">ChillaSevero</span></p>
     </div>
 </footer>
+</body>
 </html>
