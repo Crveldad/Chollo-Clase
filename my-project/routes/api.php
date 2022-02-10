@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get("/chollos", [ApiChollos::class , "index"]);
+Route::get("/rest", [ApiChollos::class , "restList"]);

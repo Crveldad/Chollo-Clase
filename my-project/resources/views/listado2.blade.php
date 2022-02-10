@@ -1,3 +1,4 @@
+<!--este es el listado original antes de usar la api y rest-->
 @extends('inicio')
 
 @section('listado')

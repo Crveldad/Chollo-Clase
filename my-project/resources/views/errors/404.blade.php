@@ -10,7 +10,9 @@
 </head>
 <body>
     <div class="error">
-    <img src="{{ asset('img/404.jpg')}}" alt="404">
+     <a href="{{route('inicio')}}"> 
+        <img src="{{ asset('img/404.jpg')}}" alt="404">
+    </a>  
     <div class="err"><h1>ERROR 404</h1>
     <p>Oops! Page not found</p>
     </div>

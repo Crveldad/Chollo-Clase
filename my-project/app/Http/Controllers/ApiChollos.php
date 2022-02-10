@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Chollo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ApiChollos extends Controller
 {
@@ -17,6 +18,14 @@ class ApiChollos extends Controller
         $c = Chollo::all();
         return $c;
     }
+
+
+    public function restList() {
+        $restChollos = Http::get('http://localhost/api/chollos') -> collect();
+
+        return view('rest', compact('restChollos'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
