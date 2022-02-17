@@ -21,7 +21,6 @@ class CreateChollosTable extends Migration
             $table->string('titulo');
             $table->text('descripcion');
             $table->string('url');
-            $table->string('categoria');
             $table->integer('puntuacion');
             $table->float('precio');
             $table->float('descuento');

@@ -21,11 +21,21 @@ class ApiChollos extends Controller
 
 
     public function restList() {
-        $restChollos = Http::get('http://localhost/api/chollos') -> collect();
+        //$restChollos = Http::get('http://localhost/api/chollos') -> collect(); PARA API EXTERNA
+
+        $chollos = Chollo::all();
 
         return view('rest', compact('restChollos'));
     }
 
+    public function api(){
+    $response = Http::post('http://localhost:8000/api/chollos', [
+        'titulo' => 'Chollazo para este producto',
+        'descripcion' => 'Lorem ipsum dolo...',
+    
+    // [...]
+    ]);
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -12,6 +12,23 @@ class Chollo extends Model
     //lo pongo en minúscula porque es el 1 de 1:N
     public function user()
     {
-        return $this -> belongsTo(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+    public function categorias()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+    public function attachCategorias($categorias)
+    {
+        $this->categorias()->attach($categorias);
+    }
+    public function detachCategorias($categorias)
+    {
+        $this->categorias()->detach($categorias);
     }
 }

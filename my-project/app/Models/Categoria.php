@@ -14,4 +14,12 @@ class Categoria extends Model
         //esto no está del todo bien, hay que poner la PK y la FK
         return $this->hasMany(Chollo::class);
     }*/
+    public function chollo()
+    {
+        return $this->belongsTo(Chollo::class);
+    }
+    public function chollos()
+    {
+        return $this->belongsTo(Chollo::class);
+    }
 }
