@@ -498,6 +498,11 @@
             justify-content: center;
         }
         
+        .formulario a {
+            text-decoration: none;
+            color: var(--negro);
+        }
+        
         .error {
             margin-top: 200px;
             background-color: var(--negro);
