@@ -31,14 +31,21 @@
           </div>
       @enderror
 
-    <label for="categoria">Categoría:</label>
-    <select name="categoria" id="categoria" value="{{ $chollo -> categoria }}">
-      <option value="lorem">Lorem</option>
-      <option value="ipsum">Ipsum</option>
-      <option value="dolor">Dolor</option>
-      <option value="sit">Sit</option>
-      <option value="amet">Amet</option>
-    </select><br>
+    <label for="categoria">Categoría:</label><br>
+    @foreach ($categoriasBD as $categoriaBD) <!--este primer foreach recorre las categorias de la BD, el segundo recorre las categorías del chollo, IMPORTANTE meter el value con la ID, o sale 'on'-->
+        <input type="checkbox" name="categoria[]" id="categoria[]" value="{{$categoriaBD->id}}"
+        @foreach ($chollo->categorias as $categoria) 
+            @if ($categoriaBD->id == $categoria->pivot->categoria_id)
+                checked
+            @endif
+        @endforeach
+        >
+        <label>{{$categoriaBD->alias}}</label>
+    @endforeach
+    <br>
+
+
+
     @error('categoria')
           <div class="alert alert-danger">
             No olvides rellenar la categoría

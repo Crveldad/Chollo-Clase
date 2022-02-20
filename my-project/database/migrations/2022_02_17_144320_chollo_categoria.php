@@ -13,7 +13,7 @@ class CholloCategoria extends Migration
      */
     public function up()
     {
-        Schema::create('chollo_categoria', function(Blueprint $table){
+        Schema::create('categoria_chollo', function(Blueprint $table){
 
         $table->id();
 
@@ -39,6 +39,6 @@ class CholloCategoria extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('categoria_chollo');
     }
 }

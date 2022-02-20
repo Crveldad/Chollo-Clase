@@ -31,3 +31,6 @@ Route::get('destacados', [ PagesController::class, 'destacados']) -> name('desta
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

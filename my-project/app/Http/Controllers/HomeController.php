@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Chollo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -33,7 +34,8 @@ class HomeController extends Controller
     
     public function formulario()
     {
-        return view('formulario');
+        $categoriasBD = Categoria::all();
+        return view('formulario', compact('categoriasBD'));
     }
 
     public function crear(Request $request)
@@ -53,7 +55,8 @@ class HomeController extends Controller
         $cholloNuevo->descripcion = $request->descripcion;
         $cholloNuevo->user_id = Auth::user()->id;
         $cholloNuevo->url = $request->url;
-        $cholloNuevo->categoria = $request->categoria;
+        //$cholloNuevo->categoria = $request->categoria;
+
         $cholloNuevo->puntuacion = 0;
         $cholloNuevo->precio = $request->precio;
         $cholloNuevo->descuento = $request->descuento;
@@ -61,14 +64,18 @@ class HomeController extends Controller
 
         $cholloNuevo->save();
 
+        //se necesita hacerlo después del save porque necesito la id del chollo, y hasta guardarlo, no exite. Así que esto relaciona la id del chollo con la de categoría
+        $cholloNuevo->attachCategorias($request->categoria);
+
         return back()->with('mensaje', 'Chollo nuevo creado');
     }
 
     public function editar($id)
     {
         $chollo = Chollo::findOrFail($id);
+        $categoriasBD = Categoria::all();
 
-        return view('chollos.editar', compact('chollo'));
+        return view('chollos.editar', compact('chollo', 'categoriasBD'));
     }
 
     public function actualizar(Request $request, $id)
@@ -87,12 +94,15 @@ class HomeController extends Controller
         $cholloActualizado->titulo = $request->titulo;
         $cholloActualizado->descripcion = $request->descripcion;
         $cholloActualizado->url = $request->url;
-        $cholloActualizado->categoria = $request->categoria;
+        //$cholloActualizado->categoria = $request->categoria;
         $cholloActualizado->puntuacion = 0;
         $cholloActualizado->precio = $request->precio;
         $cholloActualizado->descuento = $request->descuento;
         $cholloActualizado->disponible = true;
 
+        //primero le quito si tiene, y luego se la pongo, esta vez tiene que estar por encima del save porque ya existe el chollo
+        $cholloActualizado->detachCategorias($request->categoria);
+        $cholloActualizado->attachCategorias($request->categoria);
         $cholloActualizado->save();
 
         return back()->with('mensaje', 'Chollo actualizado');

@@ -17,16 +17,19 @@ class Chollo extends Model
 
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsToMany(Categoria::class);
     }
+
     public function categorias()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsToMany(Categoria::class);
     }
+
     public function attachCategorias($categorias)
     {
         $this->categorias()->attach($categorias);
     }
+
     public function detachCategorias($categorias)
     {
         $this->categorias()->detach($categorias);

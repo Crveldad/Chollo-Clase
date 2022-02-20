@@ -21,7 +21,7 @@
                 <p><span class="precio"> {{ $chollo -> precio }}€ </span>&nbsp; {{ $chollo -> descuento }}€</p>
                 <p>{{ $chollo -> descripcion }}</p>
                 <a href="{{ $chollo -> url }}"></a>
-                <p>Categoría: {{ $chollo -> categoria }}</p>
+                <!--<p>Categoría:  $chollo -> categoria->nombre</p>-->
                 <p>El creador es: {{ $chollo->user->name}}</p>
                 <p>Puntuación: {{ $chollo -> puntuacion }}</p>
 

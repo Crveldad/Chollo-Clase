@@ -29,14 +29,12 @@
           </div>
       @enderror
 
-    <label for="categoria">Categoría:</label>
-    <select name="categoria" id="categoria">
-      <option value="lorem">Lorem</option>
-      <option value="ipsum">Ipsum</option>
-      <option value="dolor">Dolor</option>
-      <option value="sit">Sit</option>
-      <option value="amet">Amet</option>
-    </select><br>
+    <label for="categoria[]">Categoría:</label><br>
+    @foreach ($categoriasBD as $categoriaBD)
+    <input type="checkbox" name="categoria[]" value="{{$categoriaBD->id}}">
+    <label>{{$categoriaBD->alias}}</label>
+    @endforeach
+    <br>
     @error('categoria')
           <div class="alert alert-danger">
             No olvides rellenar la categoría

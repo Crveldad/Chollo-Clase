@@ -16,10 +16,10 @@ class Categoria extends Model
     }*/
     public function chollo()
     {
-        return $this->belongsTo(Chollo::class);
+        return $this->belongsToMany(Chollo::class);
     }
     public function chollos()
     {
-        return $this->belongsTo(Chollo::class);
+        return $this->belongsToMany(Chollo::class);
     }
 }
