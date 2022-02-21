@@ -101,7 +101,8 @@ class HomeController extends Controller
         $cholloActualizado->disponible = true;
 
         //primero le quito si tiene, y luego se la pongo, esta vez tiene que estar por encima del save porque ya existe el chollo
-        $cholloActualizado->detachCategorias($request->categoria);
+        //tengo que hacer detach all para que quite todas, no sólo la que tenía seleccionada
+        $cholloActualizado->detachCategorias(Categoria::all());
         $cholloActualizado->attachCategorias($request->categoria);
         $cholloActualizado->save();
 
