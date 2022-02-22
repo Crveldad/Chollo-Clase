@@ -23,7 +23,6 @@ Route::post('chollos', [ HomeController::class, 'crear' ]) -> name('chollos.crea
 
 Route::get('editar/{id?}', [ HomeController::class, 'editar' ]) -> name('chollos.editar');
 Route::put('editar/{id?}', [ HomeController::class, 'actualizar' ]) -> name('chollos.actualizar');
-
 Route::delete('eliminar/{id?}', [ HomeController::class, 'eliminar' ]) -> name('chollos.eliminar');
 
 Route::get('nuevos', [ PagesController::class, 'nuevos']) -> name('nuevos');
@@ -31,6 +30,5 @@ Route::get('destacados', [ PagesController::class, 'destacados']) -> name('desta
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('chollo/{id?}',[PagesController::class, 'detalle']) -> name('detalle');

@@ -73,6 +73,9 @@
         <div>
             @yield('content')
         </div>
+        <div>
+            @yield('detalle')
+        </div>
     </div>
 
 

@@ -29,4 +29,10 @@ class PagesController extends Controller
 
         return view('listado', compact('chollos'));
     }
+
+    public function detalle($id){
+        $chollo = Chollo::findOrFail($id);
+
+        return view('detalle', compact('chollo'));
+    }
 }
